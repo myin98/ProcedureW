@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sql">
+  
+  <select id="test" resultType="Integer">
+  	SELECT 1
+  </select>
+  
+  <select id="list" statementType="CALLABLE" resultType="Map">
+  	call p_u2_list()
+  </select>
+  
+  <select id="insert" statementType="CALLABLE" parameterType="Map">
+  	call p_u2_insert(#{nm}, #{gender})
+  </select>
+  
+  <select id="update" statementType="CALLABLE" parameterType="Map">
+  	call p_u2_update(#{no}, #{nm})
+  </select>
+
+  <select id="delete" statementType="CALLABLE" parameterType="Integer">
+  	call p_u2_delete(#{no})
+  </select>
+
+</mapper>
